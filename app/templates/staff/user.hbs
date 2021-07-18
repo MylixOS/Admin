@@ -1,12 +1,12 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            <LinkTo @route="staff" data-test-staff-link={{true}}>Staff</LinkTo>
+            <LinkTo @route="staff" data-test-staff-link={{true}}>员工</LinkTo>
             <span>{{svg-jar "arrow-right"}}</span>
             {{this.user.name}}
 
             {{#if this.user.isSuspended}}
-            <span class="gh-badge suspended" data-test-suspended-badge>Suspended</span>
+            <span class="gh-badge suspended" data-test-suspended-badge>已冻结</span>
             {{/if}}
         </h2>
 
@@ -23,14 +23,14 @@
                     <GhDropdownButton @dropdownName="user-actions-menu" @classNames="gh-btn gh-btn-white gh-btn-icon only-has-icon user-actions-cog" @title="User Actions" data-test-user-actions={{true}}>
                         <span>
                             {{svg-jar "settings"}}
-                            <span class="hidden">User Settings</span>
+                            <span class="hidden">用户设置</span>
                         </span>
                     </GhDropdownButton>
                     <GhDropdown @name="user-actions-menu" @tagName="ul" @classNames="user-actions-menu dropdown-menu dropdown-align-right">
                         {{#if this.canMakeOwner}}
                             <li>
                                 <button {{action "toggleTransferOwnerModal"}}>
-                                    Make Owner
+                                    成为所有者
                                 </button>
                                 {{#if this.showTransferOwnerModal}}
                                     <GhFullscreenModal @modal="transfer-owner"
@@ -43,20 +43,20 @@
                         {{#if this.deleteUserActionIsVisible}}
                             <li>
                                 <button {{action "toggleDeleteUserModal"}} class="delete" data-test-delete-button>
-                                    Delete User
+                                    删除用户
                                 </button>
                             </li>
                             {{#if this.user.isActive}}
                                 <li>
                                     <button {{action "toggleSuspendUserModal"}} class="suspend" data-test-suspend-button>
-                                        Suspend User
+                                        已冻结用户
                                     </button>
                                 </li>
                             {{/if}}
                             {{#if this.user.isSuspended}}
                                 <li>
                                     <button {{action "toggleUnsuspendUserModal"}} class="unsuspend" data-test-unsuspend-button>
-                                        Un-suspend User
+                                        解冻结用户
                                     </button>
                                 </li>
                             {{/if}}
@@ -103,7 +103,7 @@
     </GhCanvasHeader>
 
     {{#if user.isLocked}}
-        <p class="gh-box gh-box-alert">{{svg-jar "info"}}This user account is locked. To sign in, ask this user to perform a password reset on their account.</p>
+        <p class="gh-box gh-box-alert">{{svg-jar "info"}}此用户账号已被锁定. 重置密码后才能登录.</p>
     {{/if}}
 
     {{!-- <div class="bg-"> --}}
@@ -136,7 +136,7 @@
                     <fieldset class="user-details-bottom">
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="name" @class="first-form-group">
-                            <label for="user-name">Full Name</label>
+                            <label for="user-name">全名</label>
                             <GhTextInput
                                 @id="user-name"
                                 @class="user-name"
@@ -150,7 +150,7 @@
                             {{#if this.user.errors.name}}
                                 <GhErrorMessage @errors={{this.user.errors}} @property="name" data-test-error="user-name" />
                             {{else}}
-                                <p>Use your real name so people can recognize you</p>
+                                <p>使用你的真实姓名其他人容易记住你</p>
                             {{/if}}
                         </GhFormGroup>
 
@@ -168,12 +168,12 @@
                                 @focus-out={{action (perform this.updateSlug this.slugValue)}}
                                 data-test-slug-input={{true}}
                             />
-                            <p><GhBlogUrl />/author/{{this.slugValue}}</p>
+                            <p><GhBlogUrl />/作者/{{this.slugValue}}</p>
                             <GhErrorMessage @errors={{this.user.errors}} @property="slug" data-test-error="user-slug" />
                         </GhFormGroup>
 
                         <GhFormGroup @errors={{this.user.errors}} @hasValidated={{this.user.hasValidated}} @property="email">
-                            <label for="user-email">Email</label>
+                            <label for="user-email">邮箱</label>
                             {{!-- Administrators only see text of Owner's email address but not input --}}
                             {{#if this.canChangeEmail}}
                                 <GhTextInput

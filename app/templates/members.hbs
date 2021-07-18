@@ -36,7 +36,7 @@
                     >
                         <span>
                             {{svg-jar "settings"}}
-                            <span class="hidden">Actions</span>
+                            <span class="hidden">动作</span>
                         </span>
                     </GhDropdownButton>
                     <GhDropdown
@@ -46,34 +46,34 @@
                     >
                         <li>
                             <LinkTo @route="members.import" class="mr2" data-test-link="import-csv">
-                                <span>Import members</span>
+                                <span>导入会员</span>
                             </LinkTo>
                         </li>
                         <li class="{{if this.members.length "" "disabled"}}">
                             {{#if this.members.length}}
                                 <button class="mr2" {{on "click" this.exportData}}>
                                     {{#if this.showingAll}}
-                                        <span>Export all members</span>
+                                        <span>导出所有会员</span>
                                     {{else}}
-                                    <span>Export selected members ({{this.members.length}})</span>
+                                    <span>导出选中的会员 ({{this.members.length}})</span>
                                     {{/if}}
                                 </button>
                             {{else}}
                                 <button class="mr2" disabled="true">
-                                    <span>Export selected members (0)</span>
+                                    <span>导出选中的会员 (0)</span>
                                 </button>
                             {{/if}}
                         </li>
                         {{#if (and this.members.length this.isFiltered)}}
                             <li>
                                 <button class="mr2" {{on "click" this.toggleDeleteMembersModal}} data-test-button="delete-selected">
-                                    <span class="red">Delete selected members ({{this.members.length}})</span>
+                                    <span class="red">删除选中的会员 ({{this.members.length}})</span>
                                 </button>
                             </li>
                         {{/if}}
                     </GhDropdown>
                 </span>
-                <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>New member</span></LinkTo>
+                <LinkTo @route="member.new" class="gh-btn gh-btn-primary" data-test-new-member-button="true"><span>新会员</span></LinkTo>
             </div>
         </section>
     </GhCanvasHeader>
@@ -86,10 +86,10 @@
                         <li class="gh-list-row header relative">
                             <div class="gh-list-header" data-test-list-header>{{this.listHeader}}</div>
                             {{#if (feature "emailAnalytics")}}
-                                <div class="gh-list-header gh-members-list-open-rate nowrap">Open rate</div>
+                                <div class="gh-list-header gh-members-list-open-rate nowrap">打开比率</div>
                             {{/if}}
-                            <div class="gh-list-header gh-members-list-geolocation nowrap">Location</div>
-                            <div class="gh-list-header gh-members-list-subscribed-at nowrap">Created</div>
+                            <div class="gh-list-header gh-members-list-geolocation nowrap">位置</div>
+                            <div class="gh-list-header gh-members-list-subscribed-at nowrap">已创建</div>
                             <div class="gh-list-header gh-members-list-chevron gh-list-cellwidth-chevron"></div>
                         </li>
                         <VerticalCollection @items={{this.members}} @key="id" @containerSelector=".gh-main" @estimateHeight={{69}} @staticHeight={{true}} @bufferSize={{20}} as |member|>
@@ -103,10 +103,10 @@
                             <div class="no-posts">
                                 {{svg-jar "members-placeholder" class="gh-members-placeholder"}}
                                 {{#if this.showingAll}}
-                                    <h3>No members yet</h3>
+                                    <h3>没有会员</h3>
                                     <GhMembersNoMembers @afterCreate={{this.refreshData}} />
                                 {{else}}
-                                    <h3>No members match the current filter</h3>
+                                    <h3>没有匹配任何会员</h3>
                                 {{/if}}
                             </div>
                         </li>
