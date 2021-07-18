@@ -1,11 +1,11 @@
 <header class="modal-header">
-    <h1>Regenerate your Staff Access Token</h1>
+    <h1>重新生成你员工的访问 Token</h1>
 </header>
 <a class="close" href="" role="button" title="Close" {{action "closeModal"}}>{{svg-jar "close"}}<span class="hidden">Close</span></a>
 
 <div class="modal-body">
     <p>
-        You can regenerate your Staff Access Token any time, but any scripts or applications using it will need to be updated.
+      你随时可以重新生成你员工的访问 Token， 但是之前使用老 Token 的地方必须更新才可用.
     </p>
     {{#if this.errorMessage}}
         <p class='red'> {{this.errorMessage}}</p>
@@ -13,8 +13,8 @@
 </div>
 
 <div class="modal-footer">
-    <button {{action "closeModal"}} class="gh-btn" autofocus><span>Cancel</span></button>
+    <button {{action "closeModal"}} class="gh-btn" 自动聚焦><span>取消</span></button>
     <button class="gh-btn gh-btn-icon gh-btn-red" {{action "confirm"}}>
-        <span>Regenerate your Staff Access Token</span>
+        <span>重新生成你员工的访问 Token</span>
     </button>
 </div>

@@ -72,7 +72,7 @@ export default Controller.extend({
 
         if (this.feature.get('emailAnalytics') && !this.availableOrders.findBy('name', 'Open rate')) {
             this.availableOrders.push({
-                name: 'Open rate',
+                name: '打开比率',
                 value: 'email.open_rate desc'
             });
         }
@@ -110,7 +110,8 @@ export default Controller.extend({
             .filter(tag => tag.get('id') !== null)
             .sort((tagA, tagB) => tagA.name.localeCompare(tagB.name, undefined, {ignorePunctuation: true}));
         let options = tags.toArray();
-        options.unshiftObject({name: 'All tags', slug: null});
+        //options.unshiftObject({name: 'All tags', slug: null});
+        options.unshiftObject({ name: '所有标签', slug: null });
 
         return options;
     }),
@@ -130,7 +131,8 @@ export default Controller.extend({
         let authors = this.get('_availableAuthors');
         let options = authors.toArray();
 
-        options.unshiftObject({name: 'All authors', slug: null});
+        //options.unshiftObject({name: 'All authors', slug: null});
+        options.unshiftObject({ name: '所有作者', slug: null });
 
         return options;
     }),
