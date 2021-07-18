@@ -31,12 +31,12 @@ const GhTaskButton = Component.extend({
     taskArgs: undefined,
     disabled: false,
     defaultClick: false,
-    buttonText: 'Save',
+    buttonText: '保存',
     idleClass: '',
     runningClass: '',
     showSuccess: true, // set to false if you want the spinner to show until a transition occurs
     autoReset: true, // set to false if you want don't want task button to reset after timeout
-    successText: 'Saved',
+    successText: '以保存',
     successClass: 'gh-btn-green',
     failureText: 'Retry',
     failureClass: 'gh-btn-red',

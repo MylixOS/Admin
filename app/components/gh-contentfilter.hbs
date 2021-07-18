@@ -12,7 +12,7 @@
                 @matchTriggerWidth={{false}}
                 as |type|
             >
-                {{#if type.name}}{{type.name}}{{else}}<span class="red">Unknown type</span>{{/if}}
+                {{#if type.name}}{{type.name}}{{else}}<span class="red">未知类型</span>{{/if}}
             </PowerSelect>
         </div>
     {{/unless}}
@@ -29,7 +29,7 @@
             @matchTriggerWidth={{false}}
             as |visibility|
         >
-            {{#if visibility.name}}{{visibility.name}}{{else}}<span class="red">Unknown visibility</span>{{/if}}
+            {{#if visibility.name}}{{visibility.name}}{{else}}<span class="red">未知可见性</span>{{/if}}
         </PowerSelect>
     </div>
 
@@ -47,7 +47,7 @@
                 @matchTriggerWidth={{false}}
                 as |author|
             >
-                {{#if author.name}}{{author.name}}{{else}}<span class="red">Unknown author</span>{{/if}}
+                {{#if author.name}}{{author.name}}{{else}}<span class="red">未知作者</span>{{/if}}
             </PowerSelect>
         </div>
     {{/unless}}
@@ -67,7 +67,7 @@
                 @optionsComponent="power-select-vertical-collection-options"
                 as |tag|
             >
-                {{#if tag.name}}{{tag.name}}{{else}}<span class="red">Unknown tag</span>{{/if}}
+                {{#if tag.name}}{{tag.name}}{{else}}<span class="red">未知标签</span>{{/if}}
             </PowerSelect>
         </div>
     {{/unless}}
@@ -84,7 +84,7 @@
             @matchTriggerWidth={{false}}
             as |order|
         >
-            {{#if order.name}}{{order.name}}{{else}}<span class="red">Unknown</span>{{/if}}
+            {{#if order.name}}{{order.name}}{{else}}<span class="red">未知</span>{{/if}}
         </PowerSelect>
     </div>
 

@@ -1,5 +1,5 @@
 <header class="modal-header" data-test-modal="webhook-form">
-    <h1 data-test-text="title">{{if this.webhook.isNew "New" "Edit"}} webhook</h1>
+    <h1 data-test-text="title">{{if this.webhook.isNew "New" "Edit"}} 网页钩子</h1>
 </header>
 <button class="close" href title="Close" {{action "closeModal"}} {{action (optional this.noop) on="mouseDown"}}>
     {{svg-jar "close"}}
@@ -8,7 +8,7 @@
 <div class="modal-body">
     <fieldset>
         <GhFormGroup @errors={{this.webhook.errors}} @hasValidated={{this.webhook.hasValidated}} @property="name">
-            <label for="webhook-name" class="fw6">Name</label>
+            <label for="webhook-name" class="fw6">名称</label>
             <GhTextInput
                 @value={{readonly this.webhook.name}}
                 @input={{action (mut this.webhook.name) value="target.value"}}
@@ -26,7 +26,7 @@
     </fieldset>
     <fieldset>
         <GhFormGroup @errors={{this.webhook.errors}} @hasValidated={{this.webhook.hasValidated}} @property="event">
-            <label for="webhook-event" class="fw6">Event</label>
+            <label for="webhook-event" class="fw6">事件</label>
             <span class="gh-select">
                 <OneWaySelect @value={{this.webhook.event}}
                     @options={{this.availableEvents}}
@@ -48,7 +48,7 @@
     </fieldset>
     <fieldset>
         <GhFormGroup @errors={{this.webhook.errors}} @hasValidated={{this.webhook.hasValidated}} @property="targetUrl">
-            <label for="webhook-targetUrl" class="fw6">Target URL</label>
+            <label for="webhook-targetUrl" class="fw6">目标 URL</label>
             <GhTextInput
                 @value={{readonly this.webhook.targetUrl}}
                 @input={{action (mut this.webhook.targetUrl) value="target.value"}}

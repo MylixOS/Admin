@@ -44,19 +44,19 @@ const messageMap = {
     errors: {
         post: {
             published: {
-                published: 'Update failed',
-                draft: 'Saving failed',
-                scheduled: 'Scheduling failed'
+                published: '更新失败',
+                draft: '保持失败',
+                scheduled: '定时失败'
             },
             draft: {
-                published: 'Publish failed',
-                draft: 'Saving failed',
-                scheduled: 'Scheduling failed'
+                published: '更新失败',
+                draft: '保持失败',
+                scheduled: '定时失败'
             },
             scheduled: {
-                scheduled: 'Update failed',
-                draft: 'Unscheduling failed',
-                published: 'Publish failed'
+                published: '更新失败',
+                draft: '保持失败',
+                scheduled: '定时失败'
             }
 
         }
@@ -65,19 +65,19 @@ const messageMap = {
     success: {
         post: {
             published: {
-                published: 'Updated',
-                draft: 'Saved',
-                scheduled: 'Scheduled'
+                published: '更新成功',
+                draft: '保存成功',
+                scheduled: '定时成功'
             },
             draft: {
-                published: 'Published',
-                draft: 'Saved',
-                scheduled: 'Scheduled'
+                published: '更新成功',
+                draft: '保存成功',
+                scheduled: '定时成功'
             },
             scheduled: {
-                scheduled: 'Updated',
-                draft: 'Unscheduled',
-                published: 'Published'
+                scheduled: '更新成功',
+                draft: '取消定时成功',
+                published: '已发布'
             }
         }
     }

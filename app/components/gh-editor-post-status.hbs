@@ -1,8 +1,8 @@
 <div data-test-editor-post-status ...attributes>
     {{#if this.isSaving}}
-        Saving...
+        正在保存...
     {{else if (or @post.isPublished @post.pastScheduledTime)}}
-        Published
+        已发布
         {{#if (or (eq @post.email.status "submitting") (eq @post.email.status "submitting"))}}
             and sending to {{gh-pluralize @post.email.emailCount "member"}}
         {{else if (eq @post.email.status "submitted")}}
@@ -23,9 +23,9 @@
             {{if (not @hasDirtyAttributes) "- Saved"}}
         {{/if}}
     {{else if @post.isNew}}
-        New
+        新文章
     {{else}}
-        Draft
+        草稿
         {{#if (feature "savedIndicator")}}
             {{if (not @hasDirtyAttributes) "- Saved"}}
         {{/if}}

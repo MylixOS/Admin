@@ -17,7 +17,7 @@
             {{/if}}
             {{#if entry.custom_excerpt}}
                 <p>{{entry.custom_excerpt}}</p>
-                <a href={{entry.url}} class="dib fw6 mb6" target="_blank" rel="noopener noreferrer">Read the full post →</a>
+                <a href={{entry.url}} class="dib fw6 mb6" target="_blank" rel="noopener noreferrer">阅读完整文章 →</a>
             {{else}}
                 {{{entry.html}}}
             {{/if}}
@@ -26,6 +26,6 @@
 </div>
 <div class="modal-footer gh-wn-footer">
     <a href={{this.whatsNew.changelogUrl}} target="_blank" rel="noopener noreferrer">
-        See all past updates
+        查看所以历史更新
     </a>
 </div>

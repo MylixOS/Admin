@@ -11,8 +11,8 @@ export default ModalComponent.extend({
 
     availableEvents: null,
     error: null,
-    buttonText: 'Save',
-    successText: 'Saved',
+    buttonText: '保存',
+    successText: '已保存',
 
     confirm() {},
 

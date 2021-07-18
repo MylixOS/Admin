@@ -16,11 +16,11 @@
                     {{#unless this.post.isNew}}
                         {{#if this.post.isPublished}}
                         <a class="post-view-link" target="_blank" href="{{this.post.url}}">
-                            View {{this.post.displayName}} {{svg-jar "external"}}
+                            查看 {{this.post.displayName}} {{svg-jar "external"}}
                         </a>
                         {{else if this.post.isScheduled}}
                         <a class="post-view-link" target="_blank" href="{{this.post.previewUrl}}">
-                            Preview {{svg-jar "external"}}
+                            预览 {{svg-jar "external"}}
                         </a>
                         {{/if}}
                     {{/unless}}
@@ -41,9 +41,9 @@
 
                 <div class="form-group">
                     {{#if (or this.post.isDraft this.post.isPublished this.post.pastScheduledTime)}}
-                        <label>Publish date</label>
+                        <label>发布日期</label>
                     {{else}}
-                        <label>Scheduled date</label>
+                        <label>定时发布日期</label>
                     {{/if}}
                     <GhDateTimePicker
                         @date={{this.post.publishedAtBlogDate}}
@@ -58,13 +58,13 @@
                         @isActive={{not this.isViewingSubview}}
                     />
                     {{#unless (or this.post.isDraft this.post.isPublished this.post.pastScheduledTime)}}
-                    <p>Use the publish menu to re-schedule</p>
+                    <p>使用发布菜单重新定时</p>
                     {{/unless}}
                 </div>
 
                 {{#unless this.session.user.isContributor}}
                 <div class="form-group">
-                    <label for="tag-input">Tags</label>
+                    <label for="tag-input">标签</label>
                     <GhPsmTagsInput @post={{this.post}} @triggerId="tag-input" />
                 </div>
                 {{/unless}}
@@ -73,7 +73,7 @@
                 {{#if this.showVisibilityInput}}
                     {{#if (feature "multipleProducts")}}
                         <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="visibility">
-                            <label for="visibility-input">Post access</label>
+                            <label for="visibility-input">文章访问</label>
                             <GhPsmVisibilityInput @post={{this.post}} @triggerId="visibility-input" />
                         </GhFormGroup>
 
@@ -92,7 +92,7 @@
                         {{/if}}
                     {{else}}
                         <div class="form-group">
-                            <label for="visibility-input">Post access</label>
+                            <label for="visibility-input">文章访问</label>
                             <GhPsmVisibilityInput @post={{this.post}} @triggerId="visibility-input" />
                         </div>
                     {{/if}}
@@ -100,7 +100,7 @@
 
 
                 <GhFormGroup @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="customExcerpt">
-                    <label for="custom-excerpt">Excerpt</label>
+                    <label for="custom-excerpt">排除</label>
                     <GhTextarea
                         @class="post-setting-custom-excerpt"
                         @id="custom-excerpt"
@@ -116,7 +116,7 @@
 
                 {{#unless this.session.user.isAuthorOrContributor}}
                     <GhFormGroup @class="for-select" @errors={{this.post.errors}} @hasValidated={{this.post.hasValidated}} @property="authors" data-test-input="authors">
-                        <label for="author-list">Authors</label>
+                        <label for="author-list">作者</label>
                         <GhPsmAuthorsInput @selectedAuthors={{this.post.authors}} @updateAuthors={{action "changeAuthors"}} @triggerId="author-list" />
                         <GhErrorMessage @errors={{this.post.errors}} @property="authors" data-test-error="authors" />
                     </GhFormGroup>
@@ -125,7 +125,7 @@
                 <ul class="nav-list nav-list-block">
                     <li class="nav-list-item" {{action "showSubview" "meta-data"}} data-test-button="meta-data">
                         <button type="button">
-                            <b>Meta data</b>
+                            <b>元数据(Meta data)</b>
                             <span>Extra content for search engines</span>
                         </button>
                         {{svg-jar "arrow-right"}}
