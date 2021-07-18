@@ -13,13 +13,13 @@ import {timeout} from 'ember-concurrency';
 import {tracked} from '@glimmer/tracking';
 
 const PAID_PARAMS = [{
-    name: 'All members',
+    name: '所有会员',
     value: null
 }, {
-    name: 'Free members',
+    name: '免费会员',
     value: 'false'
 }, {
-    name: 'Paid members',
+    name: '付费会员',
     value: 'true'
 }];
 
@@ -99,10 +99,10 @@ export default class MembersController extends Controller {
 
         if (this.feature.get('emailAnalytics')) {
             return [{
-                name: 'Newest',
+                name: '最新',
                 value: null
             }, {
-                name: 'Open rate',
+                name: '打开比率',
                 value: 'email_open_rate'
             }];
         }
@@ -121,7 +121,7 @@ export default class MembersController extends Controller {
             .sort((labelA, labelB) => labelA.name.localeCompare(labelB.name, undefined, {ignorePunctuation: true}));
         let options = labels.toArray();
 
-        options.unshiftObject({name: 'All labels', slug: null});
+        options.unshiftObject({name: '所有标签', slug: null});
 
         return options;
     }

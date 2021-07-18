@@ -1,9 +1,9 @@
 <section class="gh-canvas">
     <GhCanvasHeader class="gh-canvas-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            <LinkTo @route="settings">Settings</LinkTo>
+            <LinkTo @route="settings">设置</LinkTo>
             <span>{{svg-jar "arrow-right"}}</span>
-            Theme
+            主题
         </h2>
     </GhCanvasHeader>
 
@@ -16,9 +16,9 @@
 
     <section class="view-container">
         <div class="gh-setting-header gh-first-header flex justify-between">
-            <span>Ghost theme directory</span>
+            <span>Ghost 主题文件夹</span>
             <a href="https://ghost.org/themes/" target="_blank" rel="noopener noreferrer" class="gh-td-marketplace">
-                <span>View more {{svg-jar "arrow-right-small"}}</span>
+                <span>查看更多 {{svg-jar "arrow-right-small"}}</span>
             </a>
         </div>
         <div class="gh-theme-directory-container">
@@ -28,8 +28,8 @@
                         <div class="td-item-screenshot relative">
                             <img style="object-fit:contain;" src={{theme.image}} alt="{{theme.name}} Theme" />
                             <div class="td-item-overlay">
-                                <LinkTo class="td-item-action gh-btn gh-btn-black mb4" @route="settings.theme.install" @query={{hash source="github" ref=theme.ref}}><span>Install</span></LinkTo>
-                                <a href={{theme.previewUrl}} class="td-item-action gh-btn" target="_blank" rel="noopener"><span>Preview</span></a>
+                                <LinkTo class="td-item-action gh-btn gh-btn-black mb4" @route="settings.theme.install" @query={{hash source="github" ref=theme.ref}}><span>安装</span></LinkTo>
+                                <a href={{theme.previewUrl}} class="td-item-action gh-btn" target="_blank" rel="noopener"><span>预览</span></a>
                             </div>
                         </div>
                         <div class="td-item-desc">
@@ -41,7 +41,7 @@
             </div>
         </div>
 
-        <div class="gh-setting-header">Installed Themes</div>
+        <div class="gh-setting-header">已安装的主题</div>
         <div class="gh-themes-container">
 
             <GhThemeTable
@@ -52,11 +52,11 @@
 
             <div class="flex justify-between mt6">
                 <LinkTo id="upload-theme" @route="settings.theme.uploadtheme" class="gh-btn gh-btn-green" data-test-button="uploadtheme">
-                    <span>Upload a theme</span>
+                    <span>上传主题</span>
                 </LinkTo>
 
                 <a href="https://ghost.org/docs/themes/" target=_"blank" rel="noopener noreferrer" class="gh-btn gh-btn-outline">
-                    <span>Theme developer docs</span>
+                    <span>主题开发文档</span>
                 </a>
             </div>
 

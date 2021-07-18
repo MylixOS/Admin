@@ -1,9 +1,9 @@
 <section class="gh-canvas gh-setting-members-canvas" {{did-insert this.setup}}>
     <GhCanvasHeader class="gh-canvas-header gh-setting-members-header">
         <h2 class="gh-canvas-title" data-test-screen-title>
-            <LinkTo @route="settings">Settings</LinkTo>
+            <LinkTo @route="settings">设置</LinkTo>
             <span>{{svg-jar "arrow-right"}}</span>
-            Membership
+            会员身份
         </h2>
         <section class="view-actions">
             <GhTaskButton
@@ -28,13 +28,13 @@
                         <div class="gh-expandable-block">
                             <div class="gh-expandable-header">
                                 <div>
-                                    <h4 class="gh-expandable-title">Portal Settings</h4>
+                                    <h4 class="gh-expandable-title">Portal 设置</h4>
                                     <p class="gh-expandable-description">
                                         Customize members modal signup flow
                                     </p>
                                 </div>
                                 <button type="button" class="gh-btn gh-btn-green" disabled={{eq this.settings.membersSignupAccess "none"}} {{on "click" this.openPortalSettings}} data-test-toggle="portal-settings">
-                                    <span>Customize Portal &rarr;</span>
+                                    <span>自定义 Portal &rarr;</span>
                                 </button>
                             </div>
                         </div>

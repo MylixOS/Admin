@@ -6,44 +6,44 @@ import {get} from '@ember/object';
 import {inject as service} from '@ember/service';
 
 const TYPES = [{
-    name: 'All posts',
+    name: '所有文章',
     value: null
 }, {
-    name: 'Draft posts',
+    name: '草稿',
     value: 'draft'
 }, {
-    name: 'Published posts',
+    name: '已发布',
     value: 'published'
 }, {
-    name: 'Scheduled posts',
+    name: '定时发布',
     value: 'scheduled'
 }, {
-    name: 'Featured posts',
+    name: '特色文章',
     value: 'featured'
 }];
 
 const VISIBILITIES = [{
-    name: 'All access',
+    name: '所有访问',
     value: null
 }, {
-    name: 'Public',
+    name: '公开',
     value: 'public'
 }, {
-    name: 'Members-only',
+    name: '会员可见',
     value: 'members'
 }, {
-    name: 'Paid members-only',
+    name: '付费会员可见',
     value: 'paid'
 }];
 
 const ORDERS = [{
-    name: 'Newest',
+    name: '最新文章',
     value: null
 }, {
-    name: 'Oldest',
+    name: '历史文章',
     value: 'published_at asc'
 }, {
-    name: 'Recently updated',
+    name: '最近发布',
     value: 'updated_at desc'
 }];
 
